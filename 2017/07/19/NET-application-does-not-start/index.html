@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Windows,.NET,C#,Programming," />
 
 
 
@@ -95,12 +95,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Joey Chen&#39;s Blog">
-<meta property="og:url" content="https://joeychen.github.io/index.html">
+<meta name="description" content="症狀執行.NET應用程式後沒反應，檢查工作管理員有該處理程序，卻遲遲看不到主畫面。 一開始使用.NET平台開發應用程式時，總覺得建置不會遇到什麼問題，畢竟都是使用Windows作業系統，並且透過.NET Framework。">
+<meta name="keywords" content="Windows,.NET,C#,Programming">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".NET 應用程式開不起來">
+<meta property="og:url" content="https://joeychen.github.io/2017/07/19/NET-application-does-not-start/index.html">
 <meta property="og:site_name" content="Joey Chen&#39;s Blog">
+<meta property="og:description" content="症狀執行.NET應用程式後沒反應，檢查工作管理員有該處理程序，卻遲遲看不到主畫面。 一開始使用.NET平台開發應用程式時，總覺得建置不會遇到什麼問題，畢竟都是使用Windows作業系統，並且透過.NET Framework。">
+<meta property="og:image" content="https://blog.codinghorror.com/content/images/uploads/2007/03/6a0120a85dcdae970b0128776ff992970c-pi.png">
+<meta property="og:image" content="https://joeychen.github.io/2017/07/19/NET-application-does-not-start/eventvwr.png">
+<meta property="og:updated_time" content="2017-07-19T06:28:54.296Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Joey Chen&#39;s Blog">
+<meta name="twitter:title" content=".NET 應用程式開不起來">
+<meta name="twitter:description" content="症狀執行.NET應用程式後沒反應，檢查工作管理員有該處理程序，卻遲遲看不到主畫面。 一開始使用.NET平台開發應用程式時，總覺得建置不會遇到什麼問題，畢竟都是使用Windows作業系統，並且透過.NET Framework。">
+<meta name="twitter:image" content="https://blog.codinghorror.com/content/images/uploads/2007/03/6a0120a85dcdae970b0128776ff992970c-pi.png">
 
 
 
@@ -128,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://joeychen.github.io/"/>
+  <link rel="canonical" href="https://joeychen.github.io/2017/07/19/NET-application-does-not-start/"/>
 
 
 
 
 
-  <title>Joey Chen's Blog</title>
+  <title>.NET 應用程式開不起來 | Joey Chen's Blog</title>
   
 
 
@@ -159,9 +167,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-   page-home 
- ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -264,9 +270,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -292,9 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/19/NET-application-does-not-start/" itemprop="url">.NET 應用程式開不起來</a></h1>
+          <h1 class="post-title" itemprop="name headline">.NET 應用程式開不起來</h1>
         
 
         <div class="post-meta">
@@ -374,51 +378,99 @@
       
 
       
-        
-          <h1 id="症狀"><a href="#症狀" class="headerlink" title="症狀"></a>症狀</h1><p><em>執行.NET應用程式後沒反應，檢查工作管理員有該處理程序，卻遲遲看不到主畫面。</em></p>
+        <h1 id="症狀"><a href="#症狀" class="headerlink" title="症狀"></a>症狀</h1><p><em>執行.NET應用程式後沒反應，檢查工作管理員有該處理程序，卻遲遲看不到主畫面。</em></p>
 <p>一開始使用.NET平台開發應用程式時，總覺得建置不會遇到什麼問題，畢竟都是使用Windows作業系統，並且透過.NET Framework。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/19/NET-application-does-not-start/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+<a id="more"></a>
+<p>於是當遇到提供給對方的應用程式開不來的情況時，當下的直覺反應：</p>
+<ul>
+<li>.NET Framework問題：<ul>
+<li>重新安裝.NET Framwork</li>
+</ul>
+</li>
+<li>使用者權限問題：<ul>
+<li>用系統管理員開啟，或是直接關閉UAC</li>
+<li>關閉防毒軟體，或是加入例外清單</li>
+</ul>
+</li>
+</ul>
+<p>當這兩個方向都無效時，實在是忍不住喊出了程式設計師經典的台詞：<br><img src="https://blog.codinghorror.com/content/images/uploads/2007/03/6a0120a85dcdae970b0128776ff992970c-pi.png" class="[class names]" title="[在我的電腦上是正常的啊]"></p>
+<h1 id="解方"><a href="#解方" class="headerlink" title="解方"></a>解方</h1><p>喊歸喊，問題還是得解決，於是試著透過事件檢視器找出問題</p>
+<p><code>開始</code> → <code>執行</code> → <code>eventvwr</code></p>
+<img src="/2017/07/19/NET-application-does-not-start/eventvwr.png" alt="[事件檢視器]" title="[事件檢視器]">
+<p>此例為應用程式引發了UnauthorizedAccessException，可能試圖存取某個檔案，卻沒有權限。最後居然是該檔案被設成了唯讀屬性，取消唯讀屬性後，應用程式即可順利執行，搞定收工！</p>
+<h1 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h1><p><a href="http://codebetter.com/patricksmacchia/2010/04/06/windows-programming-the-quot-it-works-on-my-machine-quot-syndroma/" target="_blank" rel="external">Windows programming: The “it works on my machine” syndroma</a></p>
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>Post author：</strong>
+      Joey Chen
+    </li>
+    <li class="post-copyright-link">
+      <strong>Post link：</strong>
+      <a href="https://joeychen.github.io/2017/07/19/NET-application-does-not-start/" title=".NET 應用程式開不起來">https://joeychen.github.io/2017/07/19/NET-application-does-not-start/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright Notice： </strong>
+      All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+    </li>
+  </ul>
+
+
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
+          
+            <a href="/tags/NET/" rel="tag"># .NET</a>
+          
+            <a href="/tags/C/" rel="tag"># C#</a>
+          
+            <a href="/tags/Programming/" rel="tag"># Programming</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -426,6 +478,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -446,8 +509,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -536,6 +608,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#症狀"><span class="nav-number">1.</span> <span class="nav-text">症狀</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解方"><span class="nav-number">2.</span> <span class="nav-text">解方</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#參考"><span class="nav-number">3.</span> <span class="nav-text">參考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -661,10 +749,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -682,6 +770,18 @@
       <script id="dsq-count-scr" src="https://joeychenzh.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://joeychen.github.io/2017/07/19/NET-application-does-not-start/';
+          this.page.identifier = '2017/07/19/NET-application-does-not-start/';
+          this.page.title = '.NET 應用程式開不起來';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://joeychenzh.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
