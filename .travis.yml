@@ -1,0 +1,25 @@
+language: node_js
+
+node_js: stable
+
+cache:
+  directories:
+    - node_modules
+
+before_script:
+  - git clone --branch master https://github.com/joeychen/joeychen.github.io public
+
+script:
+  - npm run build
+
+after_success:
+  - cd public
+  - git config user.name "joeychen" 
+  - git config user.email "joeychen.zh@gmail.com"
+  - git add --all .
+  - git commit -m "Travis CI Auto Builder Update"
+  - git push https://$DEPLOY_TOKEN@github.com/joeychen/joeychen.github.io.git master
+
+branches:
+  only:
+    - raw
