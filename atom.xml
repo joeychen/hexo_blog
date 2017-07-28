@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://joeychen.github.io/"/>
-  <updated>2017-07-26T06:32:28.479Z</updated>
+  <updated>2017-07-28T03:57:00.398Z</updated>
   <id>https://joeychen.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://joeychen.github.io/2017/07/19/NET-application-does-not-start/"/>
     <id>https://joeychen.github.io/2017/07/19/NET-application-does-not-start/</id>
     <published>2017-07-19T12:08:21.000Z</published>
-    <updated>2017-07-26T06:32:28.479Z</updated>
+    <updated>2017-07-28T03:57:00.398Z</updated>
     
     <content type="html"><![CDATA[<h1 id="症狀"><a href="#症狀" class="headerlink" title="症狀"></a>症狀</h1><p><em>執行.NET應用程式後沒反應，檢查工作管理員有該處理程序，卻遲遲看不到主畫面。</em></p>
 <p>一開始使用.NET平台開發應用程式時，總覺得建置不會遇到什麼問題，畢竟都是使用Windows作業系統，並且透過.NET Framework。</p>
