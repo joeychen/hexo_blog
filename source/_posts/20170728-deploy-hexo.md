@@ -12,6 +12,7 @@ categories: Hexo
 ``` bash
 $ npm install -g hexo-cli
 ```
+<!-- more -->
 
 ## 建立檔案
 ``` bash
