@@ -8,7 +8,7 @@ cache:
 
 before_script:
   - export TZ=Asia/Taipei
-  - git clone --branch master https://github.com/joeychen/joeychen.github.io public
+  - git clone --depth 1 --branch raw https://github.com/joeychen/joeychen.github.io public
 
 # Handle git submodules yourself
 git:
