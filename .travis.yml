@@ -4,30 +4,36 @@ node_js: stable
 
 cache:
   directories:
-    - node_modules
+  - node_modules
 
 before_script:
   - git clone --branch master https://github.com/joeychen/joeychen.github.io public
 
 # Handle git submodules yourself
 git:
-    submodules: false
+  submodules: false
+
 # Use sed to replace the SSH URL with the public URL, then initialize submodules
 before_install:
-    - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-    - git submodule update --init --recursive
-    
+- sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+- git submodule update --init --recursive
+
 script:
-  - npm run build
+- npm run build
 
 after_success:
-  - cd public
-  - git config user.name "joeychen" 
-  - git config user.email "joeychen.zh@gmail.com"
-  - git add --all .
-  - git commit -m "Travis CI Auto Builder Update"
-  - git push https://$DEPLOY_TOKEN@github.com/joeychen/joeychen.github.io.git master
+- cd public
+- git config user.name "$GIT_NAME"
+- git config user.email "$GIT_EMAIL"
+- git add --all .
+- MESSAGE=`date +\ %Y-%m-%d\ %H:%M:%S`
+- git commit -m "Travis CI Updated:$MESSAGE"
+- git push --quiet https://$GH_TOKEN@github.com/joeychen/joeychen.github.io.git master
 
 branches:
   only:
-    - raw
+  - raw
+
+env:
+  global:
+    secure: l/5Z1JeMPGJKM+XYFJuI7G5WM0M9GpTPGACcKrbKCZQGArjjOxOPedIxbPxUjaXDmA3i7jvS+LYFm3eo79VX3OwYi9eiV+aRfuEbPB7+5EDVKIXvzZhh2E6qOGsYSXdFxNgcS6bXK2Dx97JstQ5hRAIQv3oqr5gR5pJ8u7LJa9khgMAsP3t9d+aG14cF3haOKDBeXlWmTLP+0SfLWA8jCsBZ9FxC8X7E4YVo5byE1ZB1Gc20iytCGQitQUIcT5vLQad1bpFOX3MDO97zM2yVLxiWnVkVCLO1NbULg9cY8eCZchTOzjqzkY6H+Do0iCuXXhiaNym5Uw4jqv8f2UmZc0k4Kf3HQZgqCg+hstjBUnFdwYIvoguJX4xxDbf7ZvxtzZ9C+zQCWz3ebQ0qtFw3WllKkofuM2T8qzfMjUrA6WeuC+Fy2WkNUZpqWzXfxbZFhxsMDuLYjTvENEkYNwtn8d/VdCV9dV8tmRIuSnDuEzLlOohsNKVfNa1HpY9pM+hlxLeDD0uXMuuDGpVT5Fxg9CN5QECA7MvdLsIS54FbJblZuzbyIbwp56MGwaVitGzZP1IUoJexOy73MKWKZlVvFLcqslPzK0/9qQnX+6I1Gz2AyQq0MguroYdO4WVpDID3pHKQzhPUZ4vqgvRpiX/p4c/ZLvglC8ozLw7xl6Tj95Y=
